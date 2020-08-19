@@ -1,0 +1,5 @@
+Problem Definition: The database presented is the aggregated data of collisions for all years from 2004 to present.
+So, We want to use the Machine Learning to predict the chance and severity of the car accidents (collisions)
+
+Reason : Since the accidents can occur every time you drive, having a program to predict the chance to have an accident will make a better decision for travelling
+With the output of the severity, the travellers can decide the path to go when the chances to get an accident are nearly equal for two paths.
