@@ -12,14 +12,23 @@ Data: From the file "Data-Collisions.csv", we extract the data and look at the a
 'PEDCYLCOUNT': The number of bicycles involved in the collision. Severity can increase if the amount of bicycles increase.
 'VEHCOUNT' : The number of vehicles involved in the collision. Severity can increase if the amount of vehicles increase.
 'INCDATE' : The date of the incident. We can separate the cases into the cases in weekdays and the cases in weekends.
-'SDOT_COLCODE'
-'SDOT_COLDESC'
-'INATTENTIONIND' 
+'INATTENTIONIND' : Whether or not collision was due to inattention. This can connect to the 'UNDERINFL' that we can separate the unintentional non-drunk and drunk drivers
+                 : For example, N               1               0.710126    Compared to    Y               1               0.651166
+                                                2               0.289874                                   2               0.348834
+                 : Therefore, the inattention accidents will cause more severity than the attention accidents
+'SDOT_COLCODE' : A code given to the collision by SDOT. SDOT is matrix describing the collision for the Motorbike, Pedalcyclist and pedestrian.
+               : The codes are the categorical, so we can use the K-means to test it.
 'UNDERINFL' : Whether or not a driver involved was under the influence of drugs or alcohol. We can test the influence of alcohol on the accident occurrence.
 'WEATHER' : The weather condition for the collision. Since different weathers make different severity, considering the weather makes the prediction more precise.
           : For example, The collisions mostly occur on the clear weather, not the raining like what we do think.
-'ROADCOND' : The road condition for the collision. Road conditions will lead to different severity. For example 
-'LIGHTCOND' : The light condition for the collision
+'ROADCOND' : The road condition for the collision. Road conditions will lead to different severity. 
+           : For example, Oil             1               0.625000  Compared to    Snow/Slush      1               0.833665
+                                          2               0.375000                                 2               0.166335
+           : We can see that if the Road condition is Oil, the collision will be more deadly.
+'LIGHTCOND' : The light condition for the collision. Whether the collisions occur in the night or day, the severity could be different
+            : For instance, Daylight                  1               0.668116 Compared to Dark - No Street Lights   1               0.782694
+                                                      2               0.331884                                       2               0.217306
+            : We can see that if the Light condition is Daylight, the collision will be more deadly.
 'PEDROWNOTGRNT' : Whether or not the pedestrian right of way was not granted. This can elaborate more on the connection between rule violation and accident
                 : For example, if the pedestrian right of way was granted, we can indicate that the collision comes from the pedestrian themselves, not the drivers.
 'SPEEDING' : Whether or not speeding was a factor in the collision. If we include the mechanics of cars and fundamental physics in this attribute, 
